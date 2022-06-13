@@ -38,107 +38,148 @@
         transition_table["q0", " "] = "q0"
     
         #finish state
-        transition_table[("q6", "#")] = "accept"
+        transition_table[("q6", "#")] = "accepted"
         transition_table[("q6", " ")] = "q7"
     
-        transition_table[("q7", "#")] = "accept"
+        transition_table[("q7", "#")] = "accepted"
         transition_table[("q7", " ")] = "q7"
     
-        #string abdi
-        transition_table[("q0", "a")] = "q1"
-        transition_table[("q1", "b")] = "q8"
-        transition_table[("q8", "d")] = "q9"
-        transition_table[("q9", "i")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "a")] = "q1"
+        #string makcik
+        transition_table[('q0', 'm')]='q1'
+        transition_table[('q1', 'a')]='q2'
+        transition_table[('q2', 'k')]='q3'
+        transition_table[('q3', 'c')]='q4'
+        transition_table[('q4', 'i')]='q5'
+        transition_table[('q5', 'k')]='q6'
+        transition_table[('q6', ' ')]='q7'
+        transition_table[('q7', 'm')]='q1'
+
+        #string menunggang
+        transition_table[('q0', 'm')]='q1'
+        transition_table[('q1', 'e')]='q8'
+        transition_table[('q8', 'n')]='q9'
+        transition_table[('q9', 'u')]='q10'
+        transition_table[('q10', 'n')]='q11'
+        transition_table[('q11', 'g')]='q12'
+        transition_table[('q12', 'g')]='q13'
+        transition_table[('q13', 'a')]='q14'
+        transition_table[('q14', 'n')]='q15'
+        transition_table[('q15', 'g')]='q6'
+        transition_table[('q6', ' ')]='q7'
+        transition_table[('q7', 'm')]='q1'
+
+        #string menaip
+        transition_table[('q0', 'm')]='q1'
+        transition_table[('q1', 'e')]='q8'
+        transition_table[('q8', 'n')]='q9'
+        transition_table[('q9', 'a')]='q16'
+        transition_table[('q16', 'i')]='q17'
+        transition_table[('q17', 'p')]='q6'
+        transition_table[('q6', ' ')]='q7'
+        transition_table[('q7', 'm')]='q1'
+
+        #string saye
+        transition_table[('q0', 's')]='q18'
+        transition_table[('q18', 'a')]='q19'
+        transition_table[('q19', 'y')]='q20'
+        transition_table[('q20', 'e')]='q6'
+        transition_table[('q6', ' ')]='q7'
+        transition_table[('q7', 's')]='q18'
+
+        # string Datuk
+        transition_table[('q0', 'd')] = 'q21'
+        transition_table[('q21', 'a')] = 'q22'
+        transition_table[('q22', 't')] = 'q23'
+        transition_table[('q23', 'u')] = 'q24'
+        transition_table[('q24', 'k')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 'd')] = 'q21'
+
+        # string Pakcik
+        transition_table[('q0', 'p')] = 'q25'
+        transition_table[('q25', 'a')] = 'q26'
+        transition_table[('q26', 'k')] = 'q27'
+        transition_table[('q27', 'c')] = 'q28'
+        transition_table[('q28', 'i')] = 'q29'
+        transition_table[('q29', 'k')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 'p')] = 'q25'
+
+        # string motosikal
+        transition_table[('q0', 'm')] = 'q1'
+        transition_table[('q1', 'o')] = 'q30'
+        transition_table[('q30', 't')] = 'q31'
+        transition_table[('q31', 'o')] = 'q32'
+        transition_table[('q32', 's')] = 'q33'
+        transition_table[('q33', 'i')] = 'q34'
+        transition_table[('q34', 'k')] = 'q35'
+        transition_table[('q35', 'a')] = 'q36'
+        transition_table[('q36', 'l')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 'm')] = 'q1'
+
+        # string bercakap
+        transition_table[('q0', 'b')] = 'q37'
+        transition_table[('q37', 'e')] = 'q38'
+        transition_table[('q38', 'r')] = 'q39'
+        transition_table[('q39', 'c')] = 'q40'
+        transition_table[('q40', 'a')] = 'q41'
+        transition_table[('q41', 'k')] = 'q42'
+        transition_table[('q42', 'a')] = 'q43'
+        transition_table[('q43', 'p')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 'b')] = 'q37'
+
+        # string selipar
+        transition_table[('q0', 's')] = 'q44'
+        transition_table[('q44', 'e')] = 'q45'
+        transition_table[('q45', 'l')] = 'q46'
+        transition_table[('q46', 'i')] = 'q47'
+        transition_table[('q47', 'p')] = 'q48'
+        transition_table[('q48', 'a')] = 'q49'
+        transition_table[('q49', 'r')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 'b')] = 'q44'
+
+        # string surat
+        transition_table[('q0', 's')] = 'q44'
+        transition_table[('q44', 'u')] = 'q50'
+        transition_table[('q50', 'r')] = 'q51'
+        transition_table[('q51', 'a')] = 'q52'
+        transition_table[('q52', 't')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 's')] = 'q44'
     
-        #string anjeun
-        transition_table[("q0", "a")] = "q1"
-        transition_table[("q1", "n")] = "q2"
-        transition_table[("q2", "j")] = "q3"
-        transition_table[("q3", "e")] = "q4"
-        transition_table[("q4", "u")] = "q5"
-        transition_table[("q5", "n")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "a")] = "q1"
+        #lexical analysis
+        print()
+        idx_char = 0
+        state = 'q0'
+        current_token = ''
+
+        print("Input terbaru : " + sentence)
+        print("__________________________________")
+
+        while state != 'accepted':
+            current_char = input_string[idx_char]
+            current_token += current_char
+            state = transition_table[(state, current_char)]
+            if state == 'q6':
+                print('current token        : '+ current_token + ', valid')
+                current_token = ''
+                check = True
+            if state == "error":
+                print("Input Tidak Valid!")
+                check = False
+                print("--------------------------------------------------------------")
+                break
+            idx_char = idx_char + 1
     
-        #string indung
-        transition_table[("q0", "i")] = "q10"
-        transition_table[("q10", "n")] = "q11"
-        transition_table[("q11", "d")] = "q12"
-        transition_table[("q12", "u")] = "q13"
-        transition_table[("q13", "n")] = "q14"
-        transition_table[("q14", "g")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "i")] = "q10"
+        #conclusion
+        if state == "accepted":
+            print('\nsemua token diinput  : '+ sentence + ', valid')
+            check = True
     
-        #string bapa
-        transition_table[("q0", "b")] = "q29"
-        transition_table[("q29", "a")] = "q31"
-        transition_table[("q31", "p")] = "q32"
-        transition_table[("q32", "a")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "b")] = "q29"
-    
-        #string maca
-        transition_table[("q0", "m")] = "q15"
-        transition_table[("q15", "a")] = "q16"
-        transition_table[("q16", "c")] = "q17"
-        transition_table[("q17", "a")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "m")] = "q15"
-    
-        #string tuang
-        transition_table[("q0", "t")] = "q19"
-        transition_table[("q19", "u")] = "q20"
-        transition_table[("q20", "a")] = "q13"
-        transition_table[("q13", "n")] = "q14"
-        transition_table[("q14", "g")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "t")] = "q19"
-    
-        #string mawa
-        transition_table[("q0", "m")] = "q15"
-        transition_table[("q15", "a")] = "q16"
-        transition_table[("q16", "w")] = "q18"
-        transition_table[("q18", "a")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "m")] = "q15"
-    
-        #string buku
-        transition_table[("q0", "b")] = "q29"
-        transition_table[("q29", "u")] = "q30"
-        transition_table[("q30", "k")] = "q27"
-        transition_table[("q27", "u")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "b")] = "q29"
-    
-        #string cau
-        transition_table[("q0", "c")] = "q28"
-        transition_table[("q28", "a")] = "q27"
-        transition_table[("q27", "u")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "c")] = "q28"
-    
-        #string sangu
-        transition_table[("q0", "s")] = "q24"
-        transition_table[("q24", "a")] = "q25"
-        transition_table[("q25", "n")] = "q26"
-        transition_table[("q26", "g")] = "q27"
-        transition_table[("q27", "u")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "s")] = "q24"
-    
-        #string kembang
-        transition_table[("q0", "k")] = "q21"
-        transition_table[("q21", "e")] = "q22"
-        transition_table[("q22", "m")] = "q23"
-        transition_table[("q23", "b")] = "q20"
-        transition_table[("q20", "a")] = "q13"
-        transition_table[("q13", "n")] = "q14"
-        transition_table[("q14", "g")] = "q6"
-        transition_table[("q6", " ")] = "q7"
-        transition_table[("q7", "k")] = "q21"
+        return check
     
         #lexical analysis
         print()
