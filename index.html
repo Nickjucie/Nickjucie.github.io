@@ -15,15 +15,15 @@
 <py-script>
     import string
 
-    '''   Lexical Func   ======================================================================================================'''
-    def lexical(sentence, check):
+  '''   Lexical Func   ======================================================================================================'''
+   def lexical(sentence, check):
         print("L E X I C A L")
         print("--------------------------------------------------------------")
 
         # initialization
         alphabet_list = list(string.ascii_lowercase)
         state_list = ['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15', 'q16', 'q17', 'q18', 'q19', 'q20',
-                      'q21', 'q22', 'q23', 'q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q31', 'q32', 'q33', 'q34', 'q35', 'q36', 'q37', 'q38', 'q39', 'q40', 'q41', 'q42', 'q43', 'q44', 'q45', 'q46']
+                      'q21', 'q22', 'q23', 'q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q31', 'q32', 'q33', 'q34', 'q35', 'q36', 'q37', 'q38', 'q39', 'q40', 'q41', 'q42', 'q43', 'q44', 'q45', 'q46', 'q47', 'q48', 'q49', 'q50', 'q51']
 
         transition_table = {}
 
@@ -122,6 +122,15 @@
         transition_table[('q6', ' ')] = 'q7'
         transition_table[('q7', 'b')] = 'q35'
 
+        # string surat
+        transition_table[('q0', 's')] = 'q18'
+        transition_table[('q18', 'u')] = 'q42'
+        transition_table[('q42', 'r')] = 'q43'
+        transition_table[('q43', 'a')] = 'q44'
+        transition_table[('q44', 't')] = 'q6'
+        transition_table[('q6', ' ')] = 'q7'
+        transition_table[('q7', 's')] = 'q18'
+
         # string saye
         transition_table[('q0', 's')] = 'q18'
         transition_table[('q18', 'a')] = 'q45'
@@ -131,24 +140,16 @@
         transition_table[('q7', 's')] = 'q18'
 
         # string pakcik
-        transition_table[('q0', 'p')] = 'q33'
-        transition_table[('q33', 'a')] = 'q34'
-        transition_table[('q34', 'k')] = 'q35'
-        transition_table[('q35', 'c')] = 'q36'
-        transition_table[('q36', 'i')] = 'q37'
-        transition_table[('q37', 'k')] = 'q6'
+        transition_table[('q0', 'p')] = 'q47'
+        transition_table[('q47', 'a')] = 'q48'
+        transition_table[('q48', 'k')] = 'q49'
+        transition_table[('q49', 'c')] = 'q50'
+        transition_table[('q50', 'i')] = 'q51'
+        transition_table[('q51', 'k')] = 'q6'
         transition_table[('q6', ' ')] = 'q7'
-        transition_table[('q7', 'p')] = 'q33'
+        transition_table[('q7', 'p')] = 'q47'
 
 
-        # string surat
-        transition_table[('q0', 's')] = 'q18'
-        transition_table[('q18', 'u')] = 'q42'
-        transition_table[('q42', 'r')] = 'q43'
-        transition_table[('q43', 'a')] = 'q44'
-        transition_table[('q44', 't')] = 'q6'
-        transition_table[('q6', ' ')] = 'q7'
-        transition_table[('q7', 's')] = 'q18'
 
         # lexical analysis
         print()
@@ -302,18 +303,20 @@
                 print("--------------------------------------------------------------")
 
             if symbol == 'EOS' and len(stack) == 0:
-                print('input string : ' + '"' + sentence + \
+                print('input string : ' + '"' + sentence +
                       '"' + ', diterima, sesuai grammar')
 
             else:
                 print("--------------------------------------------------------------")
-                print('error', 'input string:' + '"' + sentence + '"' + ', tidak diterima, tidak sesuai grammar')
+                print('error', 'input string:' + '"' + sentence +
+                      '"' + ', tidak diterima, tidak sesuai grammar')
         else:
             pass
 
         print("==============================================================\n")
 
         return parser
+
 
     
     
