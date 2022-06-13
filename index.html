@@ -180,38 +180,7 @@
             check = True
     
         return check
-    
-        #lexical analysis
-        print()
-        idx_char = 0
-        state = 'q0'
-        current_token = ''
-
-        print("Input terbaru : " + sentence)
-        print("__________________________________")
-
-        while state != 'accept':
-            current_char = input_string[idx_char]
-            current_token += current_char
-            state = transition_table[(state, current_char)]
-            if state == 'q6':
-                print('current token        : '+ current_token + ', valid')
-                current_token = ''
-                check = True
-            if state == "error":
-                print("Input Tidak Valid!")
-                check = False
-                print("--------------------------------------------------------------")
-                break
-            idx_char = idx_char + 1
-    
-        #conclusion
-        if state == "accept":
-            print('\nsemua token diinput  : '+ sentence + ', valid')
-            check = True
-    
-        return check
-    
+   
     
     
     '''   Parser Func   ======================================================================================================='''
@@ -227,60 +196,60 @@
             non_terminals = ['S', 'NN', 'VB', 'OB']
             test = ['NN', 'VB', 'OB']
             tError = ['error']
-            terminals = ['abdi', 'anjeun', 'indung', 'bapa', 'maca', 'tuang', 'mawa', 'buku', 'cau', 'sangu', 'kembang']
+            terminals = ['saye', 'datuk', 'makcik', 'pakcik', 'menaip', 'bercakap', 'menunggang', 'buku', 'selipar', 'surat', 'motosikal']
     
             parse_table = {}
     
-            parse_table[('S', 'abdi')] = test
-            parse_table[('S', 'anjeun')] = test
-            parse_table[('S', 'indung')] = test
-            parse_table[('S', 'bapa')] = test
-            parse_table[('S', 'maca')] = tError
-            parse_table[('S', 'tuang')] = tError
-            parse_table[('S', 'mawa')] = tError
+            parse_table[('S', 'saye')] = test
+            parse_table[('S', 'datuk')] = test
+            parse_table[('S', 'makcik')] = test
+            parse_table[('S', 'pakcik')] = test
+            parse_table[('S', 'menaip')] = tError
+            parse_table[('S', 'bercakap')] = tError
+            parse_table[('S', 'menunggang')] = tError
             parse_table[('S', 'buku')] = test
-            parse_table[('S', 'cau')] = test
-            parse_table[('S', 'sangu')] = test
-            parse_table[('S', 'kembang')] = test
+            parse_table[('S', 'selipar')] = test
+            parse_table[('S', 'surat')] = test
+            parse_table[('S', 'motosikal')] = test
             parse_table[('S', 'EOS')] = tError
     
-            parse_table[('NN', 'abdi')] = ['abdi']
-            parse_table[('NN', 'anjeun')] = ['anjeun']
-            parse_table[('NN', 'indung')] = ['indung']
-            parse_table[('NN', 'bapa')] = ['bapa']
-            parse_table[('NN', 'maca')] = tError
-            parse_table[('NN', 'tuang')] = tError
-            parse_table[('NN', 'mawa')] = tError
+            parse_table[('NN', 'saye')] = ['saye']
+            parse_table[('NN', 'datuk')] = ['datuk']
+            parse_table[('NN', 'makcik')] = ['makcik']
+            parse_table[('NN', 'pakcik')] = ['pakcik']
+            parse_table[('NN', 'menaip')] = tError
+            parse_table[('NN', 'bercakap')] = tError
+            parse_table[('NN', 'menunggang')] = tError
             parse_table[('NN', 'buku')] = tError
-            parse_table[('NN', 'cau')] = tError
-            parse_table[('NN', 'sangu')] = tError
-            parse_table[('NN', 'kembang')] = tError
+            parse_table[('NN', 'selipar')] = tError
+            parse_table[('NN', 'surat')] = tError
+            parse_table[('NN', 'motosikal')] = tError
             parse_table[('NN', 'EOS')] = tError
     
-            parse_table[('VB', 'abdi')] = tError
-            parse_table[('VB', 'anjeun')] = tError
-            parse_table[('VB', 'indung')] = tError
-            parse_table[('VB', 'bapa')] = tError
-            parse_table[('VB', 'maca')] = ['maca']
-            parse_table[('VB', 'tuang')] = ['tuang']
-            parse_table[('VB', 'mawa')] = ['mawa']
+            parse_table[('VB', 'saye')] = tError
+            parse_table[('VB', 'datuk')] = tError
+            parse_table[('VB', 'makcik')] = tError
+            parse_table[('VB', 'pakcik')] = tError
+            parse_table[('VB', 'menaip')] = ['menaip']
+            parse_table[('VB', 'bercakap')] = ['bercakap']
+            parse_table[('VB', 'menunggang')] = ['menunggang']
             parse_table[('VB', 'buku')] = tError
-            parse_table[('VB', 'cau')] = tError
-            parse_table[('VB', 'sangu')] = tError
-            parse_table[('VB', 'kembang')] = tError
+            parse_table[('VB', 'selipar')] = tError
+            parse_table[('VB', 'surat')] = tError
+            parse_table[('VB', 'motosikal')] = tError
             parse_table[('VB', 'EOS')] = tError
     
-            parse_table[('OB', 'abdi')] = tError
-            parse_table[('OB', 'anjeun')] = tError
-            parse_table[('OB', 'indung')] = tError
-            parse_table[('OB', 'bapa')] = tError
-            parse_table[('OB', 'maca')] = tError
-            parse_table[('OB', 'tuang')] = tError
-            parse_table[('OB', 'mawa')] = tError
+            parse_table[('OB', 'saye')] = tError
+            parse_table[('OB', 'datuk')] = tError
+            parse_table[('OB', 'makcik')] = tError
+            parse_table[('OB', 'pakcik')] = tError
+            parse_table[('OB', 'menaip')] = tError
+            parse_table[('OB', 'bercakap')] = tError
+            parse_table[('OB', 'menunggang')] = tError
             parse_table[('OB', 'buku')] = ['buku']
-            parse_table[('OB', 'cau')] = ['cau']
-            parse_table[('OB', 'sangu')] = ['sangu']
-            parse_table[('OB', 'kembang')] = ['kembang']
+            parse_table[('OB', 'selipar')] = ['selipar']
+            parse_table[('OB', 'surat')] = ['surat']
+            parse_table[('OB', 'motosikal')] = ['motosikal']
             parse_table[('OB', 'EOS')] = tError
     
             stack = []
